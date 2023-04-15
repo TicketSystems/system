@@ -8,10 +8,12 @@
     <p>Enter ticket number:</p>
     <input type="text" id="ticketNum">
     <button onclick="checkTicket()">Check</button>
+    <hr>
+    <a href="index.html">Vissza</a>
 
     <script>
       // Define the list of valid tickets
-      const validTickets = [10531, 67890, 24680, 13579];
+      const validTickets = [10531, 14852, 12712, 18231, 12696, 105356, 105355, 1232700, 10535, 14523, 12247, 10258, 14515];
 
       function checkTicket() {
         // Get the value of the ticket number input field
@@ -23,13 +25,13 @@
           validTickets.splice(validTickets.indexOf(ticketNumber), 1);
 
           // Display a success message
-          alert("Ticket " + ticketNumber + " is valid!");
+          alert(ticketNumber + "✅");
 
           // Clear the input field
           document.getElementById("ticketNum").value = "";
         } else {
           // Display an error message
-          alert("Ticket " + ticketNumber + " is not valid.");
+          alert(ticketNumber + "❌");
 
           // Clear the input field
           document.getElementById("ticketNum").value = "";
