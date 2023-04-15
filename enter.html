@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ticket Checker</title>
+  </head>
+  <body>
+    <h1>Ticket Checker</h1>
+    <p>Enter ticket number:</p>
+    <input type="text" id="ticketNum">
+    <button onclick="checkTicket()">Check</button>
+
+    <script>
+      // Define the list of valid tickets
+      const validTickets = [10531, 67890, 24680, 13579];
+
+      function checkTicket() {
+        // Get the value of the ticket number input field
+        const ticketNumber = parseInt(document.getElementById("ticketNum").value);
+        
+        // Check if the ticket number is in the list of valid tickets
+        if (validTickets.includes(ticketNumber)) {
+          // Remove the ticket number from the list of valid tickets
+          validTickets.splice(validTickets.indexOf(ticketNumber), 1);
+
+          // Display a success message
+          alert("Ticket " + ticketNumber + " is valid!");
+
+          // Clear the input field
+          document.getElementById("ticketNum").value = "";
+        } else {
+          // Display an error message
+          alert("Ticket " + ticketNumber + " is not valid.");
+
+          // Clear the input field
+          document.getElementById("ticketNum").value = "";
+        }
+      }
+    </script>
+  </body>
+</html>
