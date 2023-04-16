@@ -4,14 +4,37 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Select Activity</title>
 </head>
-<body style="text-align: center;">
-    <a href="enter.html">Belépés</a>
-    <a href="torta.html">Torta</a>
-    <a href="zene.html">Zene</a>
-    <a href="mozi.html">Mozi</a>
-    <hr>
-    <p style="text-decoration: underline;">by Levi</p>
+<style>
+    a {
+        background-color: gray;
+        padding: 5px;
+        color: aliceblue;
+        text-decoration: none;
+        font-size: 20px;
+        border-radius: 10px;
+        
+    }
+    body {
+        text-align: center;
+        align-items: center;
+        background-color: bisque;
+    }
+    #hide {
+      opacity: 0;
+    }
+</style>
+<body>
+    <div class="container" id="hide">
+        <a href="enter.html">Belépés</a>
+        <hr>
+        <p style="text-decoration: underline;">by Levi</p>
+    </div>
+    
+    <div class="error" id=" hide">
+        <p style="font-size: 50px;">❌</p>
+        <h1>Az ellenőrzés ki van kapcsolva!</h1>
+    </div>
 </body>
 </html>
