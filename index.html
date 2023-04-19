@@ -24,11 +24,16 @@
     #hide {
       opacity: 0;
     }
+
+    a {
+        margin-top: 50px;
+    }
 </style>
 <body>
-    <div class="container" id="hide">
+    <div class="cuccok" id=" hide">
         <a href="enter.html">Belépés</a>
-        <hr>
+        <br>
+        <h1>-------</h1>
         <p style="text-decoration: underline;">by Levi</p>
     </div>
     
@@ -36,5 +41,19 @@
         <p style="font-size: 50px;">❌</p>
         <h1>Az ellenőrzés ki van kapcsolva!</h1>
     </div>
+    <script>
+        // 0 = disabled ; 1 = enabled
+        const enabled = 0;
+
+if (enabled === 0) {
+// No valid tickets, hide 'cuccok' div and show 'error' div
+document.querySelector('.cuccok').style.display = 'none';
+document.querySelector('.error').style.display = 'block';
+} else {
+// Valid tickets exist, show 'cuccok' div and hide 'error' div
+document.querySelector('.cuccok').style.display = 'block';
+document.querySelector('.error').style.display = 'none';
+}
+    </script>
 </body>
 </html>

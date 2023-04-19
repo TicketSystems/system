@@ -50,7 +50,7 @@
       <a href="index.html">Vissza</a>
     </div>
 
-    <div class="error" id="hide">
+    <div class="error" id=" hide">
       <p style="font-size: 50px;">❌</p>
       <h1>Nincs aktív ellenőrzés!</h1>
       <hr>
@@ -58,7 +58,17 @@
     </div>
     <script>
       // Define the list of valid tickets
-      const validTickets = [0];
+      const validTickets = [];
+
+      if (validTickets.length === 0) {
+  // No valid tickets, hide 'cuccok' div and show 'error' div
+  document.querySelector('.cuccok').style.display = 'none';
+  document.querySelector('.error').style.display = 'block';
+} else {
+  // Valid tickets exist, show 'cuccok' div and hide 'error' div
+  document.querySelector('.cuccok').style.display = 'block';
+  document.querySelector('.error').style.display = 'none';
+}
 
       document.addEventListener("keyup", function(event) {
         if (event.key === 'Enter') {
