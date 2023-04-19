@@ -44,8 +44,9 @@
     <script>
         // 0 = disabled ; 1 = enabled
         const enabled = 0;
+        const now = new Date();
 
-if (enabled === 0) {
+if (enabled === 0, now.getHours() <= 0) {
 // No valid tickets, hide 'cuccok' div and show 'error' div
 document.querySelector('.cuccok').style.display = 'none';
 document.querySelector('.error').style.display = 'block';
@@ -54,6 +55,18 @@ document.querySelector('.error').style.display = 'block';
 document.querySelector('.cuccok').style.display = 'block';
 document.querySelector('.error').style.display = 'none';
 }
+
+const cuccokDiv = document.querySelector('.cuccok');
+const errorDiv = document.querySelector('.error');
+
+//if (now.getHours() >= 13) {
+  //cuccokDiv.style.display = 'block';
+  //errorDiv.style.display = 'none';
+//} else {
+  //cuccokDiv.style.display = 'none';
+  //errorDiv.style.display = 'block';
+//}
+
     </script>
 </body>
 </html>
