@@ -36,6 +36,18 @@
     #hide {
       opacity: 0;
     }
+
+    img {
+      border-radius: 20px;
+    }
+
+    #x {
+      display: none;
+    }
+
+    #pipa {
+      display: none;
+    }
 </style>
   <body style="text-align: center;">
     <div class="cuccok" id=" hide">
@@ -43,15 +55,19 @@
       <h1>Jegy ellenőrzés</h1>
       <p>Azonosító száma:</p>
       <input type="text" id="ticketNum">
+      <h2 id="x">❌</h2>
+      <h2 id="pipa">✅</h2>
       <br>
       <br>
       <button onclick="checkTicket()">Ellenőrzés</button>
+      <br>
+      <br>
       <a href="index.html">Vissza</a>
     </div>
 
     <div class="error" id=" hide">
       <p style="font-size: 50px;">❌</p>
-      <h1>Nincs aktív ellenőrzés!</h1>
+      <h1>Nem található jegy!</h1>
       <a href="index.html">Vissza</a>
     </div>
     <script>
@@ -84,13 +100,21 @@
           validTickets.splice(validTickets.indexOf(ticketNumber), 1);
 
           // Display a success message
-          alert(ticketNumber + "✅");
+          //alert(ticketNumber + "✅");
+          document.getElementById('pipa').style.display = 'block';
+				setTimeout(function() {
+					document.getElementById('pipa').style.display = 'none';
+				}, 1000);
 
           // Clear the input field
           document.getElementById("ticketNum").value = "";
         } else {
           // Display an error message
-          alert(ticketNumber + "❌");
+          //alert(ticketNumber + "❌");
+          document.getElementById('x').style.display = 'block';
+				setTimeout(function() {
+					document.getElementById('x').style.display = 'none';
+				}, 1000);
 
           // Clear the input field
           document.getElementById("ticketNum").value = "";

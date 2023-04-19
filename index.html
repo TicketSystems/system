@@ -1,10 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Select Activity</title>
+	<title>Log-In</title>
+	<meta charset="UTF-8">
 </head>
 <style>
     a {
@@ -21,52 +19,48 @@
         align-items: center;
         background-color: bisque;
     }
+
+    input {
+      width: auto;
+      height: auto;
+      border-radius: 5px;
+      font-size: 20px;
+    }
+
+    button {
+      width: auto;
+      height: auto;
+      border-radius: 5px;
+      font-size: 20px;
+    }
+
     #hide {
       opacity: 0;
     }
 
-    a {
-        margin-top: 50px;
+    label {
+        font-size: 20px;
     }
 </style>
 <body>
-    <div class="cuccok" id=" hide">
-        <a href="enter.html">Belépés</a>
-        <br>
-        <h1>-------</h1>
-        <p style="text-decoration: underline;">by Levi</p>
-    </div>
-    
-    <div class="error" id=" hide">
-        <p style="font-size: 50px;">❌</p>
-        <h1>Az ellenőrzés ki van kapcsolva!</h1>
-    </div>
-    <script>
-        // 0 = disabled ; 1 = enabled
-        const enabled = 0;
-        const now = new Date();
+	<label for="code">Bejelentkezési kód:</label>
+    <br>
+	<input type="text" id="code">
+    <br></br>
+	<button id="submit">Bejelentkezés</button>
 
-if (enabled === 0, now.getHours() <= 0) {
-// No valid tickets, hide 'cuccok' div and show 'error' div
-document.querySelector('.cuccok').style.display = 'none';
-document.querySelector('.error').style.display = 'block';
-} else {
-// Valid tickets exist, show 'cuccok' div and hide 'error' div
-document.querySelector('.cuccok').style.display = 'block';
-document.querySelector('.error').style.display = 'none';
-}
-
-const cuccokDiv = document.querySelector('.cuccok');
-const errorDiv = document.querySelector('.error');
-
-//if (now.getHours() >= 13) {
-  //cuccokDiv.style.display = 'block';
-  //errorDiv.style.display = 'none';
-//} else {
-  //cuccokDiv.style.display = 'none';
-  //errorDiv.style.display = 'block';
-//}
-
-    </script>
+	<script>
+		document.getElementById('submit').addEventListener('click', function() {
+			var code = document.getElementById('code').value;
+			if (code === 'base') {
+				window.location.href = 'navigationbase.html';
+			} else if (code === 'enter') {
+				window.location.href = 'navigationbase.html';
+			} else {
+				alert('Kód nincs regisztrálva!');
+			}
+		});
+        document.getElementById("code").value = "";
+	</script>
 </body>
 </html>
