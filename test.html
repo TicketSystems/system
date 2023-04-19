@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ticket Checker</title>
+  </head>
+  <body>
+    <h1>Ticket Checker</h1>
+    <p>Enter ticket number:</p>
+    <input type="text" id="ticketNum">
+    <button onclick="checkTicket()">Check</button>
+
+    <script>
+      // Define the list of valid tickets
+      let validTickets = [];
+
+      // Load the Google Sheets API
+      gapi.load('client', initClient);
+
+      // Initialize the API client
+      function initClient() {
+        gapi.client.init({
+          apiKey: 'AIzaSyDdMMlSx5OP3NdNWS1C9YqNpMH3__JLehg',
+          discoveryDocs: ['https://sheets.googleapis.com/$discovery/rest?version=v4'],
+        }).then(() => {
+          console.log('Google Sheets API initialized.');
+
+          // Call the Sheets API to get the ticket numbers
+          gapi.client.sheets.spreadsheets.values.get({
+            spreadsheetId: '1qVBUu2NW3bBA5O-hLFRelNPUXJukULYEHOkEz5nhq4I',
+            range: 'Sheet1!A1:A',
+          }).then((response) => {
+            const values = response.result.values;
+
+            // Loop through the ticket numbers and add them to the validTickets list
+            for (let i = 0; i < values.length; i++) {
+              const ticketNumber = parseInt(values[i][0]);
+              if (!isNaN(ticketNumber)) {
+                validTickets.push(ticketNumber);
+              }
+            }
+          });
+        });
+      }
+
+      function checkTicket() {
+        // Get the value of the ticket number input field
+        const ticketNumber = parseInt(document.getElementById("ticketNum").value);
+        
+        // Check if the ticket number is in the list of valid tickets
+        if (validTickets.includes(ticketNumber)) {
+          // Remove the ticket number from the list of valid tickets
+          validTickets.splice(validTickets.indexOf(ticketNumber), 1);
+
+          // Display a success message
+          alert("Ticket " + ticketNumber + " is valid!");
+
+          // Clear the input field
+          document.getElementById("ticketNum").value = "";
+        } else {
+          // Display an error message
+          alert("Ticket " + ticketNumber + " is not valid.");
+
+          // Clear the input field
+          document.getElementById("ticketNum").value = "";
+        }
+      }
+    </script>
+
+    <!-- Load the Google API client library -->
+    <script async defer src="https://apis.google.com/js/api.js"
+            onload="this.onload=function(){};handleClientLoad()"
+            onreadystatechange="if (this.readyState === 'complete') this.onload()">
+    </script>
+  </body>
+</html>

@@ -38,7 +38,7 @@
     }
 </style>
   <body style="text-align: center;">
-    <div class="cuccok" id="hide">
+    <div class="cuccok" id=" hide">
       <img src="2606127_5607.jpg" width="100" height="100">
       <h1>Jegy ellenőrzés</h1>
       <p>Azonosító száma:</p>
@@ -50,7 +50,7 @@
       <a href="index.html">Vissza</a>
     </div>
 
-    <div class="error" id=" hide">
+    <div class="error" id="hide">
       <p style="font-size: 50px;">❌</p>
       <h1>Nincs aktív ellenőrzés!</h1>
       <hr>
@@ -59,6 +59,12 @@
     <script>
       // Define the list of valid tickets
       const validTickets = [0];
+
+      document.addEventListener("keyup", function(event) {
+        if (event.key === 'Enter') {
+          checkTicket()
+      }
+  });
 
       function checkTicket() {
         // Get the value of the ticket number input field
