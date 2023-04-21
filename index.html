@@ -47,20 +47,28 @@
 	<label for="code">Bejelentkezési kód:</label>
     <br>
 	<input type="text" id="code">
+    <br>
+    <p style="font-size: 50px;" id="x">❌</p>
     <br></br>
 	<button id="submit">Bejelentkezés</button>
 
 	<script>
 		document.getElementById('submit').addEventListener('click', function() {
-			var code = document.getElementById('code').value;
+			});
+
+        function check() {
+            var code = document.getElementById('code').value;
 			if (code === 'base') {
 				window.location.href = 'navigationbase.html';
 			} else if (code === 'enter') {
 				window.location.href = 'navigationbase.html';
 			} else {
-				alert('Kód nincs regisztrálva!');
-			}
-		});
+				document.getElementById('x').style.display = 'block';
+				setTimeout(function() {
+					document.getElementById('x').style.display = 'none';
+				}, 1000);
+        };
+    }
         document.getElementById("code").value = "";
 	</script>
 </body>
