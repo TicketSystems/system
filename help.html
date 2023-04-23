@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Log-In</title>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="TicketSystemsLogo.ico" type="image/png">
+</head>
+<style>
+    a {
+        background-color: gray;
+        padding: 5px;
+        color: aliceblue;
+        text-decoration: none;
+        font-size: 20px;
+        border-radius: 10px;
+        
+    }
+    body {
+        text-align: center;
+        align-items: center;
+        background-color: bisque;
+    }
+
+    input {
+      width: auto;
+      height: auto;
+      border-radius: 5px;
+      font-size: 20px;
+    }
+
+    button {
+      width: auto;
+      height: auto;
+      border-radius: 5px;
+      font-size: 20px;
+    }
+
+    #hide {
+      opacity: 0;
+    }
+
+    label {
+        font-size: 20px;
+    }
+
+    #x {
+        display: none;
+    }
+
+    #other {
+        display: none;
+    }
+</style>
+<body>
+	<form action="https://formsubmit.co/baloghtlevente@gmail.com" method="POST">
+        <h1>Kontakt űrlap</h1>
+        <h4>Teljes név:</h5>
+        <input type="text" name="Név" placeholder="" required>
+        <h4>E-Mail:</h4>
+        <input type="email" name="Email" placeholder="" required>
+        <h4>Probléma:</h4>
+        <select    >
+            <option>--Válassz--</option>
+            <option>Nem érkeztek jegyek</option>
+            <option>Nem jött e-mail</option>
+            <option>Visszaküldés</option>
+        </select>
+        <br>
+        <h4>Leírás: (Max 100 karakter!)</h4>
+        <input type="text" name="Leírás" placeholder="" required maxlength="100" width="48" height="48">
+        <input type="hidden" name="_next" value="https://ticketsystems.github.io/system/">
+        <br>
+        <br>
+        <button type="submit">Beküldés</button>
+    </form>
+</body>
+</html>
