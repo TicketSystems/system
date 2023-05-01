@@ -1,5 +1,5 @@
 // Define the list of valid tickets
-const validTickets = [];
+const validTickets = [1];
 
 if (validTickets.length === 0) {
 // No valid tickets, hide 'cuccok' div and show 'error' div
@@ -17,6 +17,11 @@ document.addEventListener("keyup", function(event) {
 }
 });
 
+function playSound(audioName) {
+  let audio = new Audio(audioName)
+  audio.play()
+}
+
 function checkTicket() {
   // Get the value of the ticket number input field
   const ticketNumber = parseInt(document.getElementById("ticketNum").value);
@@ -29,6 +34,7 @@ function checkTicket() {
     // Display a success message
     //alert(ticketNumber + "✅");
     document.getElementById('pipa').style.display = 'block';
+    playSound("Elfogadva Kérlek csö.m4a")
           setTimeout(function() {
               document.getElementById('pipa').style.display = 'none';
           }, 1000);
@@ -39,6 +45,7 @@ function checkTicket() {
     // Display an error message
     //alert(ticketNumber + "❌");
     document.getElementById('x').style.display = 'block';
+    playSound("Megtagadva Próbáld m.m4a")
           setTimeout(function() {
               document.getElementById('x').style.display = 'none';
           }, 1000);
