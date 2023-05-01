@@ -22,6 +22,11 @@ function playSound(audioName) {
   audio.play()
 }
 
+function playArrive() {
+  let audio = new Audio("Köszöntelek a partin.m4a")
+  audio.play()
+}
+
 function checkTicket() {
   // Get the value of the ticket number input field
   const ticketNumber = parseInt(document.getElementById("ticketNum").value);
