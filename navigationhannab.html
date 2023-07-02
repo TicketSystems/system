@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="TicketSystemsLogo.ico" type="image/png">
+    <title>HannaB | Elosztó</title>
+</head>
+<style>
+    a {
+        background-color: gray;
+        padding: 5px;
+        color: aliceblue;
+        text-decoration: none;
+        font-size: 20px;
+        border-radius: 10px;
+        
+    }
+    body {
+        text-align: center;
+        align-items: center;
+        background-color: bisque;
+    }
+    #hide {
+      opacity: 0;
+    }
+
+    a {
+        margin-top: 50px;
+    }
+</style>
+<body>
+    <div class="cuccok" id=" hide">
+        <a href="enterbase.html">Belépés</a>
+        <br>
+        <h1>-------</h1>
+        <p style="text-decoration: underline;">by Levi</p>
+    </div>
+    
+    <div class="error" id=" hide">
+        <p style="font-size: 50px;">❌</p>
+        <h1>Az ellenőrzés ki van kapcsolva!</h1>
+    </div>
+    <script>
+        // 0 = disabled ; 1 = enabled
+        const enabled = 1;
+        const now = new Date();
+//, now.getHours() <= 0
+if (enabled === 0) {
+// No valid tickets, hide 'cuccok' div and show 'error' div
+document.querySelector('.cuccok').style.display = 'none';
+document.querySelector('.error').style.display = 'block';
+} else {
+// Valid tickets exist, show 'cuccok' div and hide 'error' div
+document.querySelector('.cuccok').style.display = 'block';
+document.querySelector('.error').style.display = 'none';
+}
+
+const cuccokDiv = document.querySelector('.cuccok');
+const errorDiv = document.querySelector('.error');
+
+//if (now.getHours() >= 13) {
+  //cuccokDiv.style.display = 'block';
+  //errorDiv.style.display = 'none';
+//} else {
+  //cuccokDiv.style.display = 'none';
+  //errorDiv.style.display = 'block';
+//}
+
+    </script>
+</body>
+</html>

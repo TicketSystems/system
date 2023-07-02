@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Base | Enter Szkenner</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="TicketSystemsLogo.ico" type="image/png">
+  </head>
+  <style>
+    a {
+        background-color: gray;
+        padding: 5px;
+        color: aliceblue;
+        text-decoration: none;
+        font-size: 20px;
+        border-radius: 10px;
+        
+    }
+    body {
+        text-align: center;
+        align-items: center;
+        background-color: bisque;
+    }
+
+    input {
+      width: auto;
+      height: auto;
+      border-radius: 5px;
+      font-size: 20px;
+    }
+
+    button {
+      width: auto;
+      height: auto;
+      border-radius: 5px;
+      font-size: 20px;
+    }
+
+    #hide {
+      opacity: 0;
+    }
+
+    img {
+      border-radius: 20px;
+    }
+
+    #x {
+      display: none;
+    }
+
+    #pipa {
+      display: none;
+    }
+</style>
+  <body style="text-align: center;">
+    <div class="cuccok" id=" hide">
+      <img src="2606127_5607.jpg" width="100" height="100">
+      <h1>Jegy ellenőrzés</h1>
+      <p>Azonosító száma:</p>
+      <input type="text" id="ticketNum">
+      <h2 id="x">❌</h2>
+      <h2 id="pipa">✅</h2>
+      <br>
+      <br>
+      <button onclick="checkTicket()">Ellenőrzés</button>
+      <br>
+      <br>
+      <a href="navigationhannab.html">Vissza</a>
+    </div>
+
+    <div class="error" id=" hide">
+      <p style="font-size: 50px;">❌</p>
+      <h1>Nem található jegy!</h1>
+      <a href="index.html">Vissza</a>
+    </div>
+    <script src="Scripts/hannabcheck.js"></script>
+  </body>
+</html>
