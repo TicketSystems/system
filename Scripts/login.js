@@ -14,6 +14,8 @@ document.addEventListener("keyup", function(event) {
             window.location.href = 'navigationbase.html';
         } else if (code === 'admin') {
             window.location.href = 'navigationadmin.html';
+        } else if (code === 'hannab') {
+            window.location.href = 'navigationhannab.html';
         } else if (code === 'help') {
             window.location.href = 'help.html';
         } else {
