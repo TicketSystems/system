@@ -1,5 +1,5 @@
 // Define the list of valid tickets
-const validTickets = [12];
+const validTickets = [1,2,3,4];
 
 if (validTickets.length === 0) {
 // No valid tickets, hide 'cuccok' div and show 'error' div
