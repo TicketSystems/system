@@ -39,7 +39,6 @@ function checkTicket() {
     // Display a success message
     //alert(ticketNumber + "✅");
     document.getElementById('pipa').style.display = 'block';
-    playSound("Elfogadva Kérlek csö.m4a")
           setTimeout(function() {
               document.getElementById('pipa').style.display = 'none';
           }, 1000);
@@ -50,7 +49,6 @@ function checkTicket() {
     // Display an error message
     //alert(ticketNumber + "❌");
     document.getElementById('x').style.display = 'block';
-    playSound("Megtagadva Próbáld m.m4a")
           setTimeout(function() {
               document.getElementById('x').style.display = 'none';
           }, 1000);
